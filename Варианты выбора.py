@@ -1,6 +1,5 @@
 from flask import Flask
 
-
 app = Flask(__name__)
 
 
@@ -8,14 +7,17 @@ app = Flask(__name__)
 def index():
     return "Миссия Колонизация Марса"
 
+
 @app.route('/index')
 def countdown():
     return "И на Марсе будут яблони цвести!"
 
+
 @app.route('/promotion')
 def advetisment():
-    data = ['Человечество вырастает из детства.', 'Человечеству мала одна планета.', 'Мы сделаем обитаемыми безжизненные пока планеты.',
-        'И начнем с Марса!', 'Присоединяйся! ']
+    data = ['Человечество вырастает из детства.', 'Человечеству мала одна планета.',
+            'Мы сделаем обитаемыми безжизненные пока планеты.',
+            'И начнем с Марса!', 'Присоединяйся! ']
     return '<br>'.join(data)
 
 
@@ -137,12 +139,24 @@ def select():
 @app.route('/choice/<planet_name>')
 def choice(planet_name):
     return f'''<title>Варианты выбора</title>
+    <link rel="stylesheet" 
+                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+                        crossorigin="anonymous">
     <h1>Моё предложение: {planet_name}</h1>
-    
-
-
-
-'''
+    <h4>Эта планета близка к Земле;</h4>
+    <div class="alert alert-success" role="alert">
+    <h5>На ней много необходимых ресурсов;</h5>
+    </div>
+    <div class="alert alert-dark" " role="alert">
+    <h5>На ней есть вода и атмосфера;</h5>
+    </div>
+    <div class="alert alert-warning" role="alert">
+    <h5>На ней есть небольшое магнитное поле;</h5>
+    </div>
+    <div class="alert alert-danger" role="alert">
+    <h5>Наконец, она просто красива!</h5>
+    </div>'''
 
 
 if __name__ == '__main__':
