@@ -128,6 +128,8 @@ def select():
                     <p>   </p>
                     <ladel>Готовы остаться на Марсе?</ladel>
                     <input type="checkbox" name="rules" />
+                    <p> </p>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
                 </div>
              </form>'''
 
